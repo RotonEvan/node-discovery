@@ -51,5 +51,8 @@ function create_UUID(){
 function setupPeer(name) {
     graph.addNode(name);
     graph.addLink('Broker', name, '10');
+    if (this.name != name) {
+        graph.addLink(name, this.name, '30');
+    }
     keepNodesOnTop();
 }
